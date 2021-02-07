@@ -9,7 +9,7 @@ import (
 
 func main() {
 	db.Open()
-	// db.CreateTable()
+	db.CreateTable()
 	http.HandleFunc("/", controllers.Home)
 	http.HandleFunc("/login", controllers.Login)
 	http.HandleFunc("/signup", controllers.SignUp)

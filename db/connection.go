@@ -34,7 +34,7 @@ func CreateTable() sql.Result {
 		fmt.Println("Connection not stablished!")
 	}
 
-	stmt, err := DB.Prepare("CREATE TABLE users(id int, first_name varchar(255), last_name varchar(255), email varchar(255), password varchar(255))")
+	stmt, err := DB.Prepare("CREATE TABLE IF NOT EXISTS `test`.`users` (id int, first_name varchar(255), last_name varchar(255), email varchar(255), password varchar(255))")
 	if err != nil {
 		log.Fatalf("Unable to prepare create table statement: %w", err)
 	}
